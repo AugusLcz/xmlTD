@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="BigVir" type="BigVirType"/>
+
+  <xs:complexType name="citizensType">
+    <xs:sequence>
+      <xs:element type="citizenType" name="citizen" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="citizenType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:int" name="age"/>
+      <xs:element type="xs:int" name="weight"/>
+      <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
+      <xs:element type="BigVirStatusType" name="BigVirStatus"/>
+      <xs:element type="RelationsType" name="Relations"/>
+      <xs:element type="SocialHistoryType" name="SocialHistory"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+
   <xs:complexType name="consultationType">
     <xs:sequence>
-      <xs:element type="xs:string" name="date"/>
+      <xs:element type="xs:date" name="date"/>
       <xs:element type="xs:string" name="motivation"/>
       <xs:element type="xs:string" name="description"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="consultationsType">
     <xs:sequence>
       <xs:element type="consultationType" name="consultation"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="BigVirStatusType">
+    <xs:sequence>
+      <xs:element name="vaccine" type="vacinneType"  maxOccurs="unbounded" minOccurs="0" />
+      <xs:element name="infectionStatus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vacinneType">
+    <xs:all>
+      <xs:element name="vaccinated" type="xs:boolean"/>
+      <xs:element name="date" type="xs:date"/>
+    </xs:all>
+  </xs:complexType>
+
   <xs:complexType name="hospitalizationType">
     <xs:sequence>
-      <xs:element type="xs:string" name="date"/>
-      <xs:element type="xs:string" name="motivation"/>
+      <xs:element type="xs:date" name="EntryDate"/>
+      <xs:element type="xs:date" name="LeaveDate"/>
+      <xs:element type="xs:string" name="reason"/>
       <xs:element type="xs:string" name="description"/>
-      <xs:element type="xs:string" name="term"/>
+
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="hospitalizationsType">
@@ -26,15 +61,23 @@
       <xs:element type="hospitalizationType" name="hospitalization"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="resultType">
+  <xs:complexType name="testType">
     <xs:sequence>
-      <xs:element type="xs:string" name="positive"/>
-      <xs:element type="xs:string" name="date"/>
+      <xs:element name="result">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Negative"/>
+            <xs:enumeration value="Positive"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="date" type="xs:date"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TestResultsType">
     <xs:sequence>
-      <xs:element type="resultType" name="result"/>
+      <xs:element type="testType" name="test" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="MedicalHistoryType">
@@ -46,19 +89,20 @@
   </xs:complexType>
   <xs:complexType name="personType">
     <xs:sequence>
-      <xs:element type="xs:string" name="proximity"/>
+      <xs:element type="xs:int" name="proximityLevel" />
     </xs:sequence>
     <xs:attribute type="xs:string" name="id"/>
   </xs:complexType>
+
   <xs:complexType name="RelationsType">
     <xs:sequence>
-      <xs:element type="personType" name="person"/>
+      <xs:element type="personType" name="person" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eventType" mixed="true">
     <xs:sequence>
-      <xs:element type="xs:string" name="date" minOccurs="0"/>
-      <xs:element type="xs:string" name="eventDescription" minOccurs="0"/>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="eventDescription" minOccurs="0" type="xs:string"/>
       <xs:element type="participantsType" name="participants" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute type="xs:string" name="id" use="optional"/>
@@ -74,17 +118,7 @@
       <xs:element type="eventsType" name="events"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="citizenType">
-    <xs:sequence>
-      <xs:element type="xs:string" name="name"/>
-      <xs:element type="xs:string" name="age"/>
-      <xs:element type="xs:string" name="weight"/>
-      <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
-      <xs:element type="RelationsType" name="Relations"/>
-      <xs:element type="SocialHistoryType" name="SocialHistory"/>
-    </xs:sequence>
-    <xs:attribute type="xs:string" name="id"/>
-  </xs:complexType>
+
   <xs:complexType name="numberperhourType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -106,7 +140,14 @@
   <xs:complexType name="siteType">
     <xs:sequence>
       <xs:element type="PopularityType" name="Popularity" minOccurs="0"/>
-      <xs:element type="xs:string" name="address"/>
+      <xs:element name="address">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="123 route X"/>
+            <xs:enumeration value="555 route Y"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
       <xs:element type="xs:string" name="description" minOccurs="0"/>
       <xs:element type="xs:string" name="siteDescription" minOccurs="0"/>
     </xs:sequence>
@@ -126,14 +167,16 @@
   </xs:complexType>
   <xs:complexType name="participantsType">
     <xs:sequence>
-      <xs:element type="participantType" name="participant" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="participantType" name="participant" maxOccurs="unbounded" minOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BigVirType">
     <xs:sequence>
-      <xs:element type="citizenType" name="citizen"/>
+      <xs:element type="citizensType" name="citizens"/>
       <xs:element type="sitesType" name="sites"/>
       <xs:element type="eventsType" name="events"/>
     </xs:sequence>
   </xs:complexType>
+
+
 </xs:schema>

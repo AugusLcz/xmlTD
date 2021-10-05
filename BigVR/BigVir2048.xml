@@ -1,73 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<BigVir >
-    <citizen id="10">
-        <name>
-            Bob
-        </name>
-        <age>
-            20
-        </age>
-        <weight>
-            160
-        </weight>
+<BigVir xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="BigVir2048.xsd"  >
+    <citizens><citizen id="10">
+        <name>Bob</name>
+        <age>20</age>
+        <weight>160</weight>
         <MedicalHistory>
             <consultations>
                 <consultation>
-                    <date>
-                        2021.01.01
-                    </date>
-                    <motivation>
-                        sick
-                    </motivation>
-                    <description>
-                        very sick
-                    </description>
+                    <date>2021-01-01</date>
+                    <motivation>cough, fever</motivation>
+                    <description>angina, syrup prescription</description>
                 </consultation>
             </consultations>
             <hospitalizations>
                 <hospitalization>
-                    <date>
-                        2021.01.01
-                    </date>
-                    <motivation>
-                        sick
-                    </motivation>
-                    <description>
-                        very sick
-                    </description>
-                    <term>
-                        10
-                    </term>
+                    <EntryDate>2021-01-01</EntryDate>
+                    <LeaveDate>2021-01-02</LeaveDate>
+                    <reason>broken leg</reason>
+                    <description>left the hospital with a plaster on the left leg</description>
                 </hospitalization>
             </hospitalizations>
             <TestResults>
-                <result>
-                    <positive>
-                        yes
-                    </positive>
-                    <date>
-                        2021/02/01
-                    </date>
-                </result>
+                <test>
+                    <result>Positive</result>
+
+                    <type>Tetanos</type>
+                    <date>2021-01-01</date>
+                </test>
+                <test>
+                    <result>Negative</result>
+                    <type>BigVir</type>
+                    <date>2021-01-01</date>
+                </test>
             </TestResults>
         </MedicalHistory>
+        <BigVirStatus>
+            <vaccine>
+                <vaccinated> true</vaccinated>
+                <date>2021-01-01</date>
+            </vaccine>
+            <infectionStatus>NOT INFECTED</infectionStatus>
+        </BigVirStatus>
         <Relations>
             <person id="10">
-                <proximity>
-                    10
-                </proximity>
+                <proximityLevel>3</proximityLevel>
+            </person>
+            <person id="19">
+                <proximityLevel>3</proximityLevel>
+            </person>
+            <person id="59">
+                <proximityLevel>2</proximityLevel>
+            </person>
+            <person id="37">
+                <proximityLevel>1</proximityLevel>
             </person>
         </Relations>
         <SocialHistory>
             <events>
-                <event id="23"></event>
+
             </events>
-
         </SocialHistory>
-    </citizen>
-
+    </citizen></citizens>
     <sites>
         <site siteId="1">
             <Popularity>
@@ -91,7 +87,7 @@
     </sites>
     <events>
         <event siteId="1">
-            <date>19/05/2021</date>
+            <date>2021-01-01</date>
             <eventDescription>Exposition de peinture</eventDescription>
             <participants>
                 <participant citizenId="54">
@@ -103,7 +99,7 @@
             </participants>
         </event>
         <event siteId="2">
-            <date>21/05/2021</date>
+            <date>2021-01-01</date>
             <eventDescription>Concert</eventDescription>
             <participants>
                 <participant citizenId="28">
