@@ -3,8 +3,10 @@
 
 <BigVir xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="BigVir2048.xsd"  >
-    <citizens><citizen id="10">
-        <name>Bob</name>
+    <citizens>
+        <citizen citizenId="000001">
+        <firstname>Bob</firstname>
+            <lastname>qqwe </lastname>
         <age>20</age>
         <weight>160</weight>
         <MedicalHistory>
@@ -26,7 +28,6 @@
             <TestResults>
                 <test>
                     <result>Positive</result>
-
                     <type>Tetanos</type>
                     <date>2021-01-01</date>
                 </test>
@@ -39,80 +40,83 @@
         </MedicalHistory>
         <BigVirStatus>
             <vaccine>
-                <vaccinated> true</vaccinated>
+                <vaccineName> Rivgib</vaccineName>
                 <date>2021-01-01</date>
             </vaccine>
             <infectionStatus>NOT INFECTED</infectionStatus>
         </BigVirStatus>
         <Relations>
-            <person id="10">
-                <proximityLevel>3</proximityLevel>
-            </person>
-            <person id="19">
-                <proximityLevel>3</proximityLevel>
-            </person>
-            <person id="59">
+            <person id="179728">
                 <proximityLevel>2</proximityLevel>
             </person>
-            <person id="37">
-                <proximityLevel>1</proximityLevel>
+            <person id="199722">
+                <proximityLevel>3</proximityLevel>
             </person>
         </Relations>
-        <SocialHistory>
-            <events>
 
-            </events>
-        </SocialHistory>
-    </citizen></citizens>
+    </citizen>
+
+    </citizens>
+
     <sites>
         <site siteId="1">
-            <Popularity>
-                <wholeday date="2021/02/01">
-                    <numberperhour time="1" >
-                        223
-                    </numberperhour>
-                    <numberperhour time="2" >
-                        223
-                    </numberperhour>
-                </wholeday>
-
-            </Popularity>
-            <address>123 route X</address>
-            <description>Bibliothèque</description>
+            <address>123 Flower Avenue</address>
+            <description>Library</description>
         </site>
         <site siteId="2">
-            <address>555 route Y</address>
-            <siteDescription>Musée</siteDescription>
+            <address>55 Arts Road</address>
+            <description>Museum</description>
+        </site>
+        <site siteId="3">
+            <address>12 Fairfield Avenue</address>
+            <description>Public Park</description>
+        </site>
+        <site siteId="4">
+            <address>38 Willow Road</address>
+            <description>Town Hall</description>
+        </site>
+        <site siteId="5">
+            <address>7 Milton Avenue</address>
+            <description>"The Place" - bar</description>
+        </site>
+        <site siteId="6">
+            <address>41 Langdale Road</address>
+            <description>"Lily Lodge" - restaurant</description>
         </site>
     </sites>
+
     <events>
         <event siteId="1">
-            <date>2021-01-01</date>
-            <eventDescription>Exposition de peinture</eventDescription>
+            <date>2021-01-02</date>
+            <eventDescription>signing session</eventDescription>
             <participants>
-                <participant citizenId="54">
-
-                </participant>
-                <participant citizenId="93">
-
-                </participant>
+                <participant citizenId="000001"/>
+                <participant citizenId="93"/>
+                <participant citizenId="107"/>
+                <participant citizenId="159"/>
             </participants>
         </event>
         <event siteId="2">
-            <date>2021-01-01</date>
-            <eventDescription>Concert</eventDescription>
+            <date>2021-01-02</date>
+            <eventDescription>painting exhibition</eventDescription>
             <participants>
-                <participant citizenId="28">
-                </participant>
-                <participant citizenId="37">
+                <participant citizenId="000001"/>
+            </participants>
+        </event>
+        <event siteId="5">
+            <date>2021-01-02</date>
+            <eventDescription>birthaday party</eventDescription>
+            <participants>
+                <participant citizenId="000001"/>
 
-                </participant>
-                <participant citizenId="48">
+            </participants>
+        </event>
+        <event siteId="4">
+            <date>2021-01-02</date>
+            <eventDescription>wedding</eventDescription>
+            <participants>
+                <participant citizenId="000001"/>
 
-                </participant>
-                <participant citizenId="87">
-
-                </participant>
             </participants>
         </event>
     </events>

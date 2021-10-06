@@ -10,15 +10,16 @@
 
   <xs:complexType name="citizenType">
     <xs:sequence>
-      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="firstname"/>
+      <xs:element type="xs:string" name="lastname"/>
       <xs:element type="xs:int" name="age"/>
       <xs:element type="xs:int" name="weight"/>
       <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
       <xs:element type="BigVirStatusType" name="BigVirStatus"/>
       <xs:element type="RelationsType" name="Relations"/>
-      <xs:element type="SocialHistoryType" name="SocialHistory"/>
+
     </xs:sequence>
-    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="citizenId" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="consultationType">
@@ -42,8 +43,8 @@
   </xs:complexType>
   <xs:complexType name="vacinneType">
     <xs:all>
-      <xs:element name="vaccinated" type="xs:boolean"/>
-      <xs:element name="date" type="xs:date"/>
+      <xs:element name="vaccineName" type="xs:string"/>
+      <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
     </xs:all>
   </xs:complexType>
 
@@ -113,11 +114,7 @@
       <xs:element type="eventType" name="event" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SocialHistoryType">
-    <xs:sequence>
-      <xs:element type="eventsType" name="events"/>
-    </xs:sequence>
-  </xs:complexType>
+
 
   <xs:complexType name="numberperhourType">
     <xs:simpleContent>
@@ -132,24 +129,14 @@
     </xs:sequence>
     <xs:attribute type="xs:string" name="date"/>
   </xs:complexType>
-  <xs:complexType name="PopularityType">
-    <xs:sequence>
-      <xs:element type="wholedayType" name="wholeday"/>
-    </xs:sequence>
-  </xs:complexType>
+
   <xs:complexType name="siteType">
     <xs:sequence>
-      <xs:element type="PopularityType" name="Popularity" minOccurs="0"/>
-      <xs:element name="address">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="123 route X"/>
-            <xs:enumeration value="555 route Y"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
+      <xs:element name="address" type="xs:string"/>
+
+
       <xs:element type="xs:string" name="description" minOccurs="0"/>
-      <xs:element type="xs:string" name="siteDescription" minOccurs="0"/>
+
     </xs:sequence>
     <xs:attribute type="xs:string" name="siteId" use="optional"/>
   </xs:complexType>
@@ -161,7 +148,7 @@
   <xs:complexType name="participantType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute type="xs:string" name="citizenId" use="optional"/>
+        <xs:attribute name="citizenId" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
