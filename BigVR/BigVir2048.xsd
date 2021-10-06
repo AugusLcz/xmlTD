@@ -6,16 +6,26 @@
       <xs:selector xpath="citizens/citizen/Relations/person"/>
       <xs:field xpath="@id"/>
     </xs:keyref>
+
     <xs:keyref name="participantId" refer="citizenId">
       <xs:selector xpath="events/event/participants/participant"/>
       <xs:field xpath="@id"/>
     </xs:keyref>
+
     <xs:key name="citizenId">
       <xs:selector xpath="citizens/citizen"/>
       <xs:field xpath="@citizenId"/>
     </xs:key>
 
+    <xs:key name="siteId">
+      <xs:selector xpath="sites/site"/>
+      <xs:field xpath="@siteId"/>
+    </xs:key>
 
+    <xs:keyref name="eventSiteId" refer="siteId">
+      <xs:selector xpath="events/event/site"/>
+      <xs:field xpath="@id"/>
+    </xs:keyref>
 
   </xs:element>
 <!--BigVir-->
@@ -156,11 +166,16 @@
 <!--events-->
   <xs:complexType name="eventType" mixed="true">
     <xs:sequence>
+      <xs:element name="site" >
+        <xs:complexType>
+          <xs:attribute name="id" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="date" type="xs:date"/>
       <xs:element name="eventDescription" minOccurs="0" type="xs:string"/>
       <xs:element type="participants" name="participants" minOccurs="0"/>
     </xs:sequence>
-    <xs:attribute type="xs:string" name="siteId" use="required"/>
+    <xs:attribute type="xs:string" name="eventId" use="required"/>
   </xs:complexType>
   <xs:complexType name="eventsType">
     <xs:sequence>
@@ -173,10 +188,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="participantType">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="id" use="required"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:attribute type="xs:string" name="id"/>
   </xs:complexType>
 </xs:schema>

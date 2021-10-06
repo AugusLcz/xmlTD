@@ -174,7 +174,8 @@
     </sites>
 
     <events>
-        <event siteId="1">
+        <event eventId="M2021">
+            <site id="1"/>
             <date>2021-01-02</date>
             <eventDescription>signing session</eventDescription>
             <participants>
@@ -183,7 +184,8 @@
                 <participant id="000003"/>
             </participants>
         </event>
-        <event siteId="2">
+        <event eventId="Z2020">
+            <site id="2"/>
             <date>2021-01-02</date>
             <eventDescription>painting exhibition</eventDescription>
             <participants>
@@ -191,7 +193,8 @@
                 <participant id="000003"/>
             </participants>
         </event>
-        <event siteId="5">
+        <event eventId="F2019">
+            <site id="3"/>
             <date>2021-01-02</date>
             <eventDescription>birthaday party</eventDescription>
             <participants>
@@ -200,7 +203,8 @@
                 <participant id="000003"/>
             </participants>
         </event>
-        <event siteId="4">
+        <event eventId="T2018">
+            <site id="2"/>
             <date>2021-01-02</date>
             <eventDescription>wedding</eventDescription>
             <participants>
