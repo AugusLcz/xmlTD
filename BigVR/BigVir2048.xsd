@@ -61,7 +61,7 @@
 
 
 
-
+<!--  MedicalHistory-->
   <xs:complexType name="MedicalHistoryType">
     <xs:sequence>
       <xs:element type="consultationsType" name="consultations"/>
@@ -95,8 +95,6 @@
       <xs:element type="hospitalizationType" name="hospitalization" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-
-
   <xs:complexType name="testType">
     <xs:sequence>
       <xs:element name="result">
@@ -117,6 +115,13 @@
     </xs:sequence>
   </xs:complexType>
 
+
+<!--  Relations-->
+  <xs:complexType name="RelationsType">
+    <xs:sequence>
+      <xs:element type="personType" name="person" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="personType">
     <xs:sequence>
       <xs:element type="xs:int" name="proximityLevel" />
@@ -124,19 +129,19 @@
     <xs:attribute type="xs:string" name="id"/>
   </xs:complexType>
 
-  <xs:complexType name="RelationsType">
-    <xs:sequence>
-      <xs:element type="personType" name="person" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
 
-
-
-
+<!--  BigVirStatus-->
   <xs:complexType name="BigVirStatusType">
     <xs:sequence>
       <xs:element name="vaccine" type="vacinneType"  maxOccurs="unbounded" minOccurs="0" />
-      <xs:element name="infectionStatus" type="xs:string"/>
+      <xs:element name="infectionStatus" >
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:enumeration value="INFECTED"/>
+            <xs:enumeration value="NOT INFECTED"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="vacinneType">
