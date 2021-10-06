@@ -5,57 +5,145 @@
         xsi:noNamespaceSchemaLocation="BigVir2048.xsd"  >
     <citizens>
         <citizen citizenId="000001">
-        <firstname>Bob</firstname>
-            <lastname>qqwe </lastname>
-        <age>20</age>
-        <weight>160</weight>
-        <MedicalHistory>
-            <consultations>
-                <consultation>
+            <firstname>Bob</firstname>
+            <lastname>Smith</lastname>
+            <age>20</age>
+            <weight>180</weight>
+            <MedicalHistory>
+                <consultations>
+                    <consultation>
+                        <date>2021-01-01</date>
+                        <motivation>cough, fever</motivation>
+                        <description>angina, syrup prescription</description>
+                    </consultation>
+                </consultations>
+                <hospitalizations>
+                    <hospitalization>
+                        <EntryDate>2021-01-01</EntryDate>
+                        <LeaveDate>2021-01-02</LeaveDate>
+                        <reason>broken leg</reason>
+                        <description>left the hospital with a plaster on the left leg</description>
+                    </hospitalization>
+                </hospitalizations>
+                <TestResults>
+                    <test>
+                        <result>Positive</result>
+                        <type>Tetanos</type>
+                        <date>2021-01-01</date>
+                    </test>
+                    <test>
+                        <result>Negative</result>
+                        <type>BigVir</type>
+                        <date>2021-01-01</date>
+                    </test>
+                </TestResults>
+            </MedicalHistory>
+            <BigVirStatus>
+                <vaccine>
+                    <vaccineName>Rivgib</vaccineName>
                     <date>2021-01-01</date>
-                    <motivation>cough, fever</motivation>
-                    <description>angina, syrup prescription</description>
-                </consultation>
-            </consultations>
-            <hospitalizations>
-                <hospitalization>
-                    <EntryDate>2021-01-01</EntryDate>
-                    <LeaveDate>2021-01-02</LeaveDate>
-                    <reason>broken leg</reason>
-                    <description>left the hospital with a plaster on the left leg</description>
-                </hospitalization>
-            </hospitalizations>
-            <TestResults>
-                <test>
-                    <result>Positive</result>
-                    <type>Tetanos</type>
-                    <date>2021-01-01</date>
-                </test>
-                <test>
-                    <result>Negative</result>
-                    <type>BigVir</type>
-                    <date>2021-01-01</date>
-                </test>
-            </TestResults>
-        </MedicalHistory>
-        <BigVirStatus>
-            <vaccine>
-                <vaccineName> Rivgib</vaccineName>
-                <date>2021-01-01</date>
-            </vaccine>
-            <infectionStatus>NOT INFECTED</infectionStatus>
-        </BigVirStatus>
-        <Relations>
-            <person id="179728">
-                <proximityLevel>2</proximityLevel>
-            </person>
-            <person id="199722">
-                <proximityLevel>3</proximityLevel>
-            </person>
-        </Relations>
-
-    </citizen>
-
+                </vaccine>
+                <infectionStatus>NOT INFECTED</infectionStatus>
+            </BigVirStatus>
+            <Relations>
+                <person id="000002">
+                    <proximityLevel>2</proximityLevel>
+                </person>
+                <person id="000003">
+                    <proximityLevel>3</proximityLevel>
+                </person>
+            </Relations>
+        </citizen>
+        <citizen citizenId="000002">
+            <firstname>Alice</firstname>
+            <lastname>Johnson</lastname>
+            <age>35</age>
+            <weight>172</weight>
+            <MedicalHistory>
+                <consultations>
+                    <consultation>
+                        <date>2019-07-28</date>
+                        <motivation>fever</motivation>
+                        <description>flu, paracetamol prescription</description>
+                    </consultation>
+                    <consultation>
+                        <date>2021-09-25</date>
+                        <motivation>fever, cough, loss of taste</motivation>
+                        <description>suspected positive to BigVir, test prescription</description>
+                    </consultation>
+                </consultations>
+                <hospitalizations>
+                    <hospitalization>
+                        <EntryDate>2021-10-02</EntryDate>
+                        <LeaveDate>2021-10-30</LeaveDate>
+                        <reason>severe case of BigVir</reason>
+                        <description>intensive care, work stopping for 2 months</description>
+                    </hospitalization>
+                </hospitalizations>
+                <TestResults>
+                    <test>
+                        <result>Negative</result>
+                        <type>AIDS</type>
+                        <date>2009-02-18</date>
+                    </test>
+                    <test>
+                        <result>Positive</result>
+                        <type>BigVir</type>
+                        <date>2021-09-26</date>
+                    </test>
+                </TestResults>
+            </MedicalHistory>
+            <BigVirStatus>
+                <infectionStatus>INFECTED</infectionStatus>
+            </BigVirStatus>
+            <Relations>
+                <person id="000001">
+                    <proximityLevel>2</proximityLevel>
+                </person>
+                <person id="000003">
+                    <proximityLevel>1</proximityLevel>
+                </person>
+            </Relations>
+        </citizen>
+        <citizen citizenId="000003">
+            <firstname>Emma</firstname>
+            <lastname>Smith</lastname>
+            <age>21</age>
+            <weight>168</weight>
+            <MedicalHistory>
+                <consultations>
+                    <consultation>
+                        <date>2019-03-24</date>
+                        <motivation>fever</motivation>
+                        <description>flu, paracetamol prescription</description>
+                    </consultation>
+                </consultations>
+                <hospitalizations>
+                </hospitalizations>
+                <TestResults>
+                    <test>
+                        <result>Negative</result>
+                        <type>BigVir</type>
+                        <date>2021-09-26</date>
+                    </test>
+                </TestResults>
+            </MedicalHistory>
+            <BigVirStatus>
+                <vaccine>
+                    <vaccineName>Rivgib</vaccineName>
+                    <date>2021-03-11</date>
+                </vaccine>
+                <infectionStatus>NOT INFECTED</infectionStatus>
+            </BigVirStatus>
+            <Relations>
+                <person id="000001">
+                    <proximityLevel>3</proximityLevel>
+                </person>
+                <person id="000002">
+                    <proximityLevel>1</proximityLevel>
+                </person>
+            </Relations>
+        </citizen>
     </citizens>
 
     <sites>
@@ -90,33 +178,34 @@
             <date>2021-01-02</date>
             <eventDescription>signing session</eventDescription>
             <participants>
-                <participant citizenId="000001"/>
-                <participant citizenId="93"/>
-                <participant citizenId="107"/>
-                <participant citizenId="159"/>
+                <participant id="000001"/>
+                <participant id="000002"/>
+                <participant id="000003"/>
             </participants>
         </event>
         <event siteId="2">
             <date>2021-01-02</date>
             <eventDescription>painting exhibition</eventDescription>
             <participants>
-                <participant citizenId="000001"/>
+                <participant id="000001"/>
+                <participant id="000003"/>
             </participants>
         </event>
         <event siteId="5">
             <date>2021-01-02</date>
             <eventDescription>birthaday party</eventDescription>
             <participants>
-                <participant citizenId="000001"/>
-
+                <participant id="000001"/>
+                <participant id="000002"/>
+                <participant id="000003"/>
             </participants>
         </event>
         <event siteId="4">
             <date>2021-01-02</date>
             <eventDescription>wedding</eventDescription>
             <participants>
-                <participant citizenId="000001"/>
-
+                <participant id="000002"/>
+                <participant id="000003"/>
             </participants>
         </event>
     </events>

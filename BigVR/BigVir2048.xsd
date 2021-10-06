@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="BigVir" type="BigVirType"/>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="BigVir" type="BigVirType">
+    <xs:keyref name="relationId" refer="citizenId">
+      <xs:selector xpath="citizens/citizen/Relations/person"/>
+      <xs:field xpath="@id"/>
+    </xs:keyref>
+    <xs:keyref name="participantId" refer="citizenId">
+      <xs:selector xpath="events/event/participants/participant"/>
+      <xs:field xpath="@id"/>
+    </xs:keyref>
+    <xs:key name="citizenId">
+      <xs:selector xpath="citizens/citizen"/>
+      <xs:field xpath="@citizenId"/>
+    </xs:key>
+
+
+
+  </xs:element>
 <!--BigVir-->
   <xs:complexType name="BigVirType">
     <xs:sequence>
@@ -9,6 +26,8 @@
       <xs:element type="eventsType" name="events"/>
     </xs:sequence>
   </xs:complexType>
+
+
 
 <!--  citizens-->
   <xs:complexType name="citizensType">
@@ -42,7 +61,7 @@
   </xs:complexType>
   <xs:complexType name="consultationsType">
     <xs:sequence>
-      <xs:element type="consultationType" name="consultation" maxOccurs="unbounded"/>
+      <xs:element type="consultationType" name="consultation" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="consultationType">
@@ -63,7 +82,7 @@
   <xs:element type="xs:string" name="description"/>
   <xs:complexType name="hospitalizationsType">
     <xs:sequence>
-      <xs:element type="hospitalizationType" name="hospitalization"/>
+      <xs:element type="hospitalizationType" name="hospitalization" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -148,16 +167,16 @@
       <xs:element type="eventType" name="event" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="participants">
+    <xs:sequence>
+      <xs:element name="participant" type="participantType" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="participantType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="citizenId" use="required"/>
+        <xs:attribute name="id" use="required"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="participants">
-    <xs:sequence>
-      <xs:element type="participantType" name="participant" maxOccurs="unbounded" minOccurs="0"/>
-    </xs:sequence>
   </xs:complexType>
 </xs:schema>
