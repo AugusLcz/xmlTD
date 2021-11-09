@@ -11,11 +11,13 @@
           "city": "New York",
           "MedicalHistory": {
             "consultations": {
-              "consultation": {
-                "date": "2021-01-01",
-                "motivation": "cough, fever",
-                "description": "angina, syrup prescription"
-              }
+              "consultation": [
+                {
+                  "date": "2021-01-01",
+                  "motivation": "cough, fever",
+                  "description": "angina, syrup prescription"
+                }
+              ]
             },
             "hospitalizations": {
               "hospitalization": {
@@ -134,18 +136,22 @@
           "city": "New York",
           "MedicalHistory": {
             "consultations": {
-              "consultation": {
-                "date": "2019-03-24",
-                "motivation": "fever",
-                "description": "flu, paracetamol prescription"
-              }
+              "consultation": [
+                {
+                  "date": "2019-03-24",
+                  "motivation": "fever",
+                  "description": "flu, paracetamol prescription"
+                }
+              ]
             },
             "TestResults": {
-              "test": {
-                "result": "Negative",
-                "type": "BigVir",
-                "date": "2021-09-26"
-              }
+              "test": [
+                {
+                  "result": "Negative",
+                  "type": "BigVir",
+                  "date": "2021-09-26"
+                }
+              ]
             }
           },
           "BigVirStatus": {
@@ -181,11 +187,11 @@
           "city": "Boston",
           "MedicalHistory": {
             "TestResults": {
-              "test": {
+              "test": [{
                 "result": "Negative",
                 "type": "BigVir",
                 "date": "2021-05-15"
-              }
+              }]
             }
           },
           "BigVirStatus": {
@@ -196,10 +202,11 @@
             "infectionStatus": "NOT INFECTED"
           },
           "Relations": {
-            "person": {
+            "person":[ {
               "id": "000005",
               "proximityLevel": "3"
             }
+            ]
           }
         },
         {

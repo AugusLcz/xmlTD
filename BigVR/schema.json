@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BigVir": {
+      "type": "object",
+      "required": ["citizens","sites","events"],
+      "properties": {
+        "citizens": {
+          "type": "object",
+          "required": ["citizen"],
+          "properties": {
+            "citizen": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["citizenId","firstname","lastname","age","weight","city","MedicalHistory","BigVirStatus","Relations"],
+                "properties": {
+                  "citizenId": {
+                    "type": "string"
+                  },
+                  "firstname": {
+                    "type": "string"
+                  },
+                  "lastname": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "string"
+                  },
+                  "weight": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "MedicalHistory": {
+                    "type": "object",
+                    "properties": {
+                      "consultations": {
+                        "type": "object",
+                        "required": ["consultation"],
+                        "properties": {
+                          "consultation": {
+                            "type": "array",
+                            "required": ["date","motivation","description"],
+                            "minimum": 0,
+                            "properties": {
+                              "date": {
+                                "type": "string"
+                              },
+                              "motivation": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "hospitalizations": {
+                        "type": "object",
+                        "required": ["hospitalization"],
+                        "properties": {
+                          "hospitalization": {
+                            "type": "object",
+                            "required": ["EntryDate","LeaveDate","reason","description"],
+                            "minimum": 0,
+                            "properties": {
+                              "EntryDate": {
+                                "type": "string"
+                              },
+                              "LeaveDate": {
+                                "type": "string"
+                              },
+                              "reason": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "TestResults": {
+                        "type": "object",
+                        "required": ["test"],
+                        "properties": {
+                          "test": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": ["result","type","date"],
+                              "minimum": 0,
+                              "properties": {
+                                "result": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                },
+                                "date": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "BigVirStatus": {
+                    "type": "object",
+                    "required": ["infectionStatus"],
+                    "properties": {
+                      "vaccine": {
+                        "type": "object",
+                        "required": ["vaccineName","date"],
+                        "minimum": 0,
+                        "properties": {
+                          "vaccineName": {
+                            "type": "string"
+                          },
+                          "date": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "infectionStatus": {
+                        "type": "string",
+                        "maximum": 1
+                      }
+                    }
+                  },
+                  "Relations": {
+                    "type": "object",
+                    "properties": {
+                      "person": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["id","proximityLevel"],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "proximityLevel": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sites": {
+          "type": "object",
+          "required": ["site"],
+          "properties": {
+            "site": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["siteId","address","description"],
+                "properties": {
+                  "siteId": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "events": {
+          "type": "object",
+          "required": ["event"],
+          "properties": {
+            "event": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["eventId","site","date","eventDescription","participants"],
+                "properties": {
+                  "eventId": {
+                    "type": "string"
+                  },
+                  "site": {
+                    "type": "object",
+                    "required": ["id"],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "eventDescription": {
+                    "type": "string"
+                  },
+                  "participants": {
+                    "type": "object",
+                    "required": ["participant"],
+                    "properties": {
+                      "participant": {
+                        "type": "array",
+                        "minimum": 0,
+                        "items": {
+                          "type": "object",
+                          "required": ["id"],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
