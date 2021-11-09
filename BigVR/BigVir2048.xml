@@ -53,6 +53,9 @@
                 <person id="000003">
                     <proximityLevel>3</proximityLevel>
                 </person>
+                <person id="000005">
+                    <proximityLevel>2</proximityLevel>
+                </person>
             </Relations>
         </citizen>
         <citizen citizenId="000002">
@@ -145,6 +148,9 @@
                 <person id="000002">
                     <proximityLevel>1</proximityLevel>
                 </person>
+                <person id="000005">
+                    <proximityLevel>2</proximityLevel>
+                </person>
             </Relations>
         </citizen>
         <citizen citizenId="000004">
@@ -209,6 +215,12 @@
             <Relations>
                 <person id="000004">
                     <proximityLevel>3</proximityLevel>
+                </person>
+                <person id="000001">
+                    <proximityLevel>2</proximityLevel>
+                </person>
+                <person id="000003">
+                    <proximityLevel>2</proximityLevel>
                 </person>
             </Relations>
         </citizen>
