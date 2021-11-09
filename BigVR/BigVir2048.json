@@ -1,0 +1,400 @@
+{
+  "BigVir": {
+    "citizens": {
+      "citizen": [
+        {
+          "citizenId": "000001",
+          "firstname": "Bob",
+          "lastname": "Smith",
+          "age": "20",
+          "weight": "180",
+          "city": "New York",
+          "MedicalHistory": {
+            "consultations": {
+              "consultation": {
+                "date": "2021-01-01",
+                "motivation": "cough, fever",
+                "description": "angina, syrup prescription"
+              }
+            },
+            "hospitalizations": {
+              "hospitalization": {
+                "EntryDate": "2021-01-01",
+                "LeaveDate": "2021-01-02",
+                "reason": "broken leg",
+                "description": "left the hospital with a plaster on the left leg"
+              }
+            },
+            "TestResults": {
+              "test": [
+                {
+                  "result": "Positive",
+                  "type": "Tetanos",
+                  "date": "2021-01-01"
+                },
+                {
+                  "result": "Negative",
+                  "type": "BigVir",
+                  "date": "2021-01-01"
+                }
+              ]
+            }
+          },
+          "BigVirStatus": {
+            "vaccine": {
+              "vaccineName": "Rivgib",
+              "date": "2021-01-01"
+            },
+            "infectionStatus": "NOT INFECTED"
+          },
+          "Relations": {
+            "person": [
+              {
+                "id": "000002",
+                "proximityLevel": "2"
+              },
+              {
+                "id": "000003",
+                "proximityLevel": "3"
+              },
+              {
+                "id": "000005",
+                "proximityLevel": "2"
+              }
+            ]
+          }
+        },
+        {
+          "citizenId": "000002",
+          "firstname": "Alice",
+          "lastname": "Johnson",
+          "age": "35",
+          "weight": "172",
+          "city": "New York",
+          "MedicalHistory": {
+            "consultations": {
+              "consultation": [
+                {
+                  "date": "2019-07-28",
+                  "motivation": "fever",
+                  "description": "flu, paracetamol prescription"
+                },
+                {
+                  "date": "2021-09-25",
+                  "motivation": "fever, cough, loss of taste",
+                  "description": "suspected positive to BigVir, test prescription"
+                }
+              ]
+            },
+            "hospitalizations": {
+              "hospitalization": {
+                "EntryDate": "2021-10-02",
+                "LeaveDate": "2021-10-30",
+                "reason": "severe case of BigVir",
+                "description": "intensive care, work stopping for 2 months"
+              }
+            },
+            "TestResults": {
+              "test": [
+                {
+                  "result": "Negative",
+                  "type": "AIDS",
+                  "date": "2009-02-18"
+                },
+                {
+                  "result": "Positive",
+                  "type": "BigVir",
+                  "date": "2021-10-26"
+                }
+              ]
+            }
+          },
+          "BigVirStatus": {
+            "infectionStatus": "INFECTED"
+          },
+          "Relations": {
+            "person": [
+              {
+                "id": "000001",
+                "proximityLevel": "2"
+              },
+              {
+                "id": "000003",
+                "proximityLevel": "1"
+              }
+            ]
+          }
+        },
+        {
+          "citizenId": "000003",
+          "firstname": "Emma",
+          "lastname": "Smith",
+          "age": "21",
+          "weight": "168",
+          "city": "New York",
+          "MedicalHistory": {
+            "consultations": {
+              "consultation": {
+                "date": "2019-03-24",
+                "motivation": "fever",
+                "description": "flu, paracetamol prescription"
+              }
+            },
+            "TestResults": {
+              "test": {
+                "result": "Negative",
+                "type": "BigVir",
+                "date": "2021-09-26"
+              }
+            }
+          },
+          "BigVirStatus": {
+            "vaccine": {
+              "vaccineName": "Rivgib",
+              "date": "2021-03-11"
+            },
+            "infectionStatus": "NOT INFECTED"
+          },
+          "Relations": {
+            "person": [
+              {
+                "id": "000001",
+                "proximityLevel": "3"
+              },
+              {
+                "id": "000002",
+                "proximityLevel": "1"
+              },
+              {
+                "id": "000005",
+                "proximityLevel": "2"
+              }
+            ]
+          }
+        },
+        {
+          "citizenId": "000004",
+          "firstname": "Franklin",
+          "lastname": "Park",
+          "age": "37",
+          "weight": "188",
+          "city": "Boston",
+          "MedicalHistory": {
+            "TestResults": {
+              "test": {
+                "result": "Negative",
+                "type": "BigVir",
+                "date": "2021-05-15"
+              }
+            }
+          },
+          "BigVirStatus": {
+            "vaccine": {
+              "vaccineName": "Rivgib",
+              "date": "2021-02-27"
+            },
+            "infectionStatus": "NOT INFECTED"
+          },
+          "Relations": {
+            "person": {
+              "id": "000005",
+              "proximityLevel": "3"
+            }
+          }
+        },
+        {
+          "citizenId": "000005",
+          "firstname": "Julia",
+          "lastname": "Walker",
+          "age": "35",
+          "weight": "182",
+          "city": "Boston",
+          "MedicalHistory": {
+            "TestResults": {
+              "test": [
+                {
+                  "result": "Negative",
+                  "type": "BigVir",
+                  "date": "2021-05-15"
+                },
+                {
+                  "result": "Positive",
+                  "type": "BigVir",
+                  "date": "2021-11-08"
+                }
+              ]
+            }
+          },
+          "BigVirStatus": {
+            "infectionStatus": "INFECTED"
+          },
+          "Relations": {
+            "person": [
+              {
+                "id": "000004",
+                "proximityLevel": "3"
+              },
+              {
+                "id": "000001",
+                "proximityLevel": "2"
+              },
+              {
+                "id": "000003",
+                "proximityLevel": "2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "sites": {
+      "site": [
+        {
+          "siteId": "1",
+          "address": "123 Flower Avenue",
+          "description": "Library"
+        },
+        {
+          "siteId": "2",
+          "address": "55 Arts Road",
+          "description": "Museum"
+        },
+        {
+          "siteId": "3",
+          "address": "12 Fairfield Avenue",
+          "description": "Public Park"
+        },
+        {
+          "siteId": "4",
+          "address": "38 Willow Road",
+          "description": "Town Hall"
+        },
+        {
+          "siteId": "5",
+          "address": "7 Milton Avenue",
+          "description": "\"The Place\" - bar"
+        },
+        {
+          "siteId": "6",
+          "address": "41 Langdale Road",
+          "description": "\"Lily Lodge\" - restaurant"
+        }
+      ]
+    },
+    "events": {
+      "event": [
+        {
+          "eventId": "E001",
+          "site": {
+            "id": "1"
+          },
+          "date": "2021-01-02",
+          "eventDescription": "signing session",
+          "participants": {
+            "participant": [
+              {
+                "id": "000001"
+              },
+              {
+                "id": "000002"
+              },
+              {
+                "id": "000003"
+              }
+            ]
+          }
+        },
+        {
+          "eventId": "E002",
+          "site": {
+            "id": "2"
+          },
+          "date": "2021-07-19",
+          "eventDescription": "painting exhibition",
+          "participants": {
+            "participant": [
+              {
+                "id": "000001"
+              },
+              {
+                "id": "000003"
+              }
+            ]
+          }
+        },
+        {
+          "eventId": "E003",
+          "site": {
+            "id": "3"
+          },
+          "date": "2021-10-13",
+          "eventDescription": "birthaday party",
+          "participants": {
+            "participant": [
+              {
+                "id": "000001"
+              },
+              {
+                "id": "000002"
+              },
+              {
+                "id": "000003"
+              },
+              {
+                "id": "000004"
+              }
+            ]
+          }
+        },
+        {
+          "eventId": "E004",
+          "site": {
+            "id": "6"
+          },
+          "date": "2021-03-08",
+          "eventDescription": "wedding",
+          "participants": {
+            "participant": [
+              {
+                "id": "000002"
+              },
+              {
+                "id": "000003"
+              },
+              {
+                "id": "000004"
+              },
+              {
+                "id": "000005"
+              }
+            ]
+          }
+        },
+        {
+          "eventId": "E005",
+          "site": {
+            "id": "2"
+          },
+          "date": "2021-11-04",
+          "eventDescription": "charity event",
+          "participants": {
+            "participant": [
+              {
+                "id": "000001"
+              },
+              {
+                "id": "000002"
+              },
+              {
+                "id": "000004"
+              },
+              {
+                "id": "000005"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
