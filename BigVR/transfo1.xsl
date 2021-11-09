@@ -5,7 +5,10 @@
         <html>
             <head> <title> Citoyens vaccinés </title> </head>
             <body>
-                <h3>Liste des citoyens vaccinés</h3>
+                <h3>Liste des
+                    <!-- calcul le nombre de citoyens vaccinés -->
+                    <xsl:value-of select="count(BigVir/citizens/citizen/BigVirStatus/vaccine)"/>
+                    citoyens vaccinés</h3>
                 <!-- création du tableau -->
                 <table border="1">
                     <tr>
