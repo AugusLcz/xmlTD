@@ -9,6 +9,7 @@
             <lastname>Smith</lastname>
             <age>20</age>
             <weight>180</weight>
+            <city>New York</city>
             <MedicalHistory>
                 <consultations>
                     <consultation>
@@ -59,6 +60,7 @@
             <lastname>Johnson</lastname>
             <age>35</age>
             <weight>172</weight>
+            <city>New York</city>
             <MedicalHistory>
                 <consultations>
                     <consultation>
@@ -110,6 +112,7 @@
             <lastname>Smith</lastname>
             <age>21</age>
             <weight>168</weight>
+            <city>New York</city>
             <MedicalHistory>
                 <consultations>
                     <consultation>
@@ -142,6 +145,35 @@
                 <person id="000002">
                     <proximityLevel>1</proximityLevel>
                 </person>
+            </Relations>
+        </citizen>
+        <citizen citizenId="000004">
+            <firstname>Franklin</firstname>
+            <lastname>Park</lastname>
+            <age>37</age>
+            <weight>188</weight>
+            <city>Boston</city>
+            <MedicalHistory>
+                <consultations>
+                </consultations>
+                <hospitalizations>
+                </hospitalizations>
+                <TestResults>
+                    <test>
+                        <result>Negative</result>
+                        <type>BigVir</type>
+                        <date>2021-05-15</date>
+                    </test>
+                </TestResults>
+            </MedicalHistory>
+            <BigVirStatus>
+                <vaccine>
+                    <vaccineName>Rivgib</vaccineName>
+                    <date>2021-02-27</date>
+                </vaccine>
+                <infectionStatus>NOT INFECTED</infectionStatus>
+            </BigVirStatus>
+            <Relations>
             </Relations>
         </citizen>
     </citizens>
@@ -201,6 +233,7 @@
                 <participant id="000001"/>
                 <participant id="000002"/>
                 <participant id="000003"/>
+                <participant id="000004"/>
             </participants>
         </event>
         <event eventId="T2018">

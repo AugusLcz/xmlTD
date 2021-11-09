@@ -52,6 +52,7 @@
       <xs:element type="xs:string" name="lastname"/>
       <xs:element type="xs:int" name="age"/>
       <xs:element type="xs:int" name="weight"/>
+      <xs:element type="xs:string" name="city"/>
       <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
       <xs:element type="BigVirStatusType" name="BigVirStatus"/>
       <xs:element type="RelationsType" name="Relations"/>
