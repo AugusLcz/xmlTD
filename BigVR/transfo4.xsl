@@ -2,11 +2,14 @@
     <xsl:template match="/">
         <CITIZENS>
             <xsl:for-each select="BigVir/citizens/citizen">
+                <!-- sélection des citoyens infectés -->
                 <xsl:sort select="lastname" />
                 <xsl:if test="BigVirStatus/infectionStatus = 'INFECTED'">
+                    <!-- ajout des informations du citoyens infecté -->
                     <INFECTED_CITIZEN id="{@citizenId}" name="{lastname} {firstname}">
                         <CLOSE_RELATIONS>
                             <xsl:for-each select="Relations/person">
+                                <!-- liste les personnes proches du citoyen infecté -->
                                 <xsl:sort select="proximityLevel" order="descending"/>
                                 <xsl:if test="proximityLevel &gt; 1">
                                     <PERSON id="{@id}" proximity="{proximityLevel}">
