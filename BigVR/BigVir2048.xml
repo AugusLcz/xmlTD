@@ -91,7 +91,7 @@
                     <test>
                         <result>Positive</result>
                         <type>BigVir</type>
-                        <date>2021-09-26</date>
+                        <date>2021-10-26</date>
                     </test>
                 </TestResults>
             </MedicalHistory>
@@ -174,6 +174,42 @@
                 <infectionStatus>NOT INFECTED</infectionStatus>
             </BigVirStatus>
             <Relations>
+                <person id="000005">
+                    <proximityLevel>3</proximityLevel>
+                </person>
+            </Relations>
+        </citizen>
+        <citizen citizenId="000005">
+            <firstname>Julia</firstname>
+            <lastname>Walker</lastname>
+            <age>35</age>
+            <weight>182</weight>
+            <city>Boston</city>
+            <MedicalHistory>
+                <consultations>
+                </consultations>
+                <hospitalizations>
+                </hospitalizations>
+                <TestResults>
+                    <test>
+                        <result>Negative</result>
+                        <type>BigVir</type>
+                        <date>2021-05-15</date>
+                    </test>
+                    <test>
+                        <result>Negative</result>
+                        <type>BigVir</type>
+                        <date>2021-11-08</date>
+                    </test>
+                </TestResults>
+            </MedicalHistory>
+            <BigVirStatus>
+                <infectionStatus>INFECTED</infectionStatus>
+            </BigVirStatus>
+            <Relations>
+                <person id="000004">
+                    <proximityLevel>3</proximityLevel>
+                </person>
             </Relations>
         </citizen>
     </citizens>
@@ -227,7 +263,7 @@
         </event>
         <event eventId="F2019">
             <site id="3"/>
-            <date>2021-01-02</date>
+            <date>2021-10-02</date>
             <eventDescription>birthaday party</eventDescription>
             <participants>
                 <participant id="000001"/>
@@ -243,6 +279,8 @@
             <participants>
                 <participant id="000002"/>
                 <participant id="000003"/>
+                <participant id="000004"/>
+                <participant id="000005"/>
             </participants>
         </event>
     </events>
