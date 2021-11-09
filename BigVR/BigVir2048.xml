@@ -242,7 +242,7 @@
     </sites>
 
     <events>
-        <event eventId="M2021">
+        <event eventId="E001">
             <site id="1"/>
             <date>2021-01-02</date>
             <eventDescription>signing session</eventDescription>
@@ -252,18 +252,18 @@
                 <participant id="000003"/>
             </participants>
         </event>
-        <event eventId="Z2020">
+        <event eventId="E002">
             <site id="2"/>
-            <date>2021-01-02</date>
+            <date>2021-07-19</date>
             <eventDescription>painting exhibition</eventDescription>
             <participants>
                 <participant id="000001"/>
                 <participant id="000003"/>
             </participants>
         </event>
-        <event eventId="F2019">
+        <event eventId="E003">
             <site id="3"/>
-            <date>2021-10-02</date>
+            <date>2021-10-13</date>
             <eventDescription>birthaday party</eventDescription>
             <participants>
                 <participant id="000001"/>
@@ -272,13 +272,24 @@
                 <participant id="000004"/>
             </participants>
         </event>
-        <event eventId="T2018">
-            <site id="2"/>
-            <date>2021-01-02</date>
+        <event eventId="E004">
+            <site id="6"/>
+            <date>2021-03-08</date>
             <eventDescription>wedding</eventDescription>
             <participants>
                 <participant id="000002"/>
                 <participant id="000003"/>
+                <participant id="000004"/>
+                <participant id="000005"/>
+            </participants>
+        </event>
+        <event eventId="E005">
+            <site id="2"/>
+            <date>2021-11-04</date>
+            <eventDescription>charity event</eventDescription>
+            <participants>
+                <participant id="000001"/>
+                <participant id="000002"/>
                 <participant id="000004"/>
                 <participant id="000005"/>
             </participants>
