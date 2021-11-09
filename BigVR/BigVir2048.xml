@@ -203,7 +203,7 @@
                         <date>2021-05-15</date>
                     </test>
                     <test>
-                        <result>Negative</result>
+                        <result>Positive</result>
                         <type>BigVir</type>
                         <date>2021-11-08</date>
                     </test>
